@@ -1,0 +1,16 @@
+// Binary Exponentiation
+//--------------------------------------------------------
+
+using ll = long long;
+const ll mod = 1000000007;
+
+ll binary_expo(ll a, ll b, ll mod) {   // finding (a^b)
+   ll res = 1ll;
+   while (b) {
+      if ((b & 1LL))
+         res = (res * a) % mod;
+      a = (a * a) % mod;
+      b = (b >> 1LL);
+   }
+   return res;
+}
